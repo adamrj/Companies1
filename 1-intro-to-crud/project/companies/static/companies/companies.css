@@ -1,0 +1,13 @@
+.header{
+	border-bottom: 2px solid black;
+}
+
+h1.heading{
+	color: black;
+	display: inline;
+}
+
+a.create_link{
+	text-decoration: none;
+	margin-left: 1em;
+}

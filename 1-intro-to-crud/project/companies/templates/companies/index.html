@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href= "{% static 'companies/companies.css' %}">
+</head>
+	<body>
+	<div class="header">
+		<h1 class="heading">Client List</h1>
+		<a class="create_link" href="{% url 'companies:new' %}">Create New</a>
+	</div>
+    {% if companies %}
+        <ul>
+        {%for company in companies %}
+            <li><a class="create_link" href="{% url 'companies:info' company.id %}">{{ company.name }}</a></li>
+        {%endfor%}
+        </ul>
+    {%endif%}
+
+	</body>
+</html>

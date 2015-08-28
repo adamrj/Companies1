@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="header">
+        <h3>{{company.name}}</h3>
+        <a class="create_link" href="{% url 'companies:index' %}">Home</a>
+    </div>
+    {%if company%}
+        <p>Name: {{company.name}}</p>
+        <p>Phone: {{company.phone}}</p>
+        <p>Email: {{company.email}}</p>
+        <a class="create_link" href="{% url 'companies:edit_view' company.id %}">Edit</a>
+        <a class="create_link" href="{% url 'companies:delete' company.id %}">Delete</a>
+    {%endif%}
+
+
+</body>
+</html>

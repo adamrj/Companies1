@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="heading">Create New</h1>
+        <a class="create_link" href="{% url 'companies:index' %}">Home</a>
+    </div>
+    <form name="companies" action="{% url 'companies:create' %}" method="POST">
+    {% csrf_token %}
+        <p>Company:<input name="name" type="text"></p>
+        <p>Phone:<input name="phone" type="text"></p>
+        <p>Email:<input name="email" type="text"></p>
+        <input name="Create" type="submit">
+    </form>
+
+</body>
+</html>

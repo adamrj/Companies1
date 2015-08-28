@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="header">
+        <h1 class="heading">Update Entry - {{company.name}}</h1>
+        <a class="create_link" href="{% url 'companies:index' %}">Home</a>
+    </div>
+    <form name="edit_company" action="{% url 'companies:edit' company.id %}" method="POST">
+    {% csrf_token %}
+        <p>Company:<input name="name" type="text" value="{{company.name}}"></p>
+        <p>Phone:<input name="phone" type="text" value="{{company.phone}}"></p>
+        <p>Email:<input name="email" type="text" value="{{company.email}}"></p>
+        <input value="Update" type="submit">
+    </form>
+</body>
+</html>
